@@ -20,3 +20,8 @@
   - this helps stop directory traversal attacks
 - [Range requests](https://benramsey.com/blog/2008/05/206-partial-content-and-range-requests)
   are fully supported. This is great for resumable downloads!
+
+## TIL - All incoming http requests are handled concurrently
+
+Yes, blazingly fast, but be aware of race conditions when accessing
+shared resources
