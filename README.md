@@ -1,1 +1,2 @@
 - Following the book [Let's Go](https://lets-go.alexedwards.net/)
+- `chmod +x ./run.sh` if it refuses to execute
