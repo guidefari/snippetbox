@@ -13,3 +13,10 @@
 <p>My default sidebar content</p>
 {{end}} {{end}}
 ```
+
+## TIL - Additional info about Go's file server
+
+- It sanitizes all request paths by running them through `path.Clean`
+  - this helps stop directory traversal attacks
+- [Range requests](https://benramsey.com/blog/2008/05/206-partial-content-and-range-requests)
+  are fully supported. This is great for resumable downloads!
