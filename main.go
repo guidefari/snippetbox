@@ -19,6 +19,13 @@ func snippetView(w http.ResponseWriter, r *http.Request) {
 }
 
 func snippetCreate(w http.ResponseWriter, r *http.Request) {
+	if r.Method != "POST" {
+		w.Header().Set("Allow", "POST")
+		w.WriteHeader(405)
+		w.Write([]byte("Method Not allowed"))
+		return
+	}
+
 	w.Write([]byte("Create a new snippet..."))
 }
 
@@ -28,7 +35,7 @@ func main() {
 	mux.HandleFunc("/snippet/view", snippetView)
 	mux.HandleFunc("/snippet/create", snippetCreate)
 
-	log.Print("Starting server on :420")
-	err := http.ListenAndServe(":420", mux)
+	log.Print("Starting server on :4000")
+	err := http.ListenAndServe(":4000", mux)
 	log.Fatal(err)
 }
