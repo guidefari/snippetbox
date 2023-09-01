@@ -25,3 +25,11 @@
 
 Yes, blazingly fast, but be aware of race conditions when accessing
 shared resources
+
+## TIL - Command line flags
+
+`addrVariable := flag.String("addr", ":4000", "HTTP network address")`
+
+- This takes the flag `addr` from the command line
+- Sets a default value of `":4000"`
+- Gives it some helper text
