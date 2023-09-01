@@ -33,3 +33,16 @@ shared resources
 - This takes the flag `addr` from the command line
 - Sets a default value of `":4000"`
 - Gives it some helper text
+
+## Do a deep dive on function signatures
+
+```go
+// Change the signature of the home handler so it is defined as a method against // *application.
+func (app *application) home(w http.ResponseWriter, r *http.Request) {
+
+// as seen in handler.go
+```
+
+- my question is especially centered around `func (app *application)`
+- learning module resolution and package management will probably be helpful tooo
+  - that \*application exists in `main.go`
