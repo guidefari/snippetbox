@@ -46,3 +46,7 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
 - my question is especially centered around `func (app *application)`
 - learning module resolution and package management will probably be helpful tooo
   - that \*application exists in `main.go`
+
+## What is a struct, really?
+
+- various use cases
