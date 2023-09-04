@@ -1,0 +1,3 @@
+- [ ] docker compose with go & db docker containers
+  - [ ] run via docker compose
+  - [ ] they should be in the same network
