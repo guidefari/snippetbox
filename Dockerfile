@@ -4,5 +4,5 @@ FROM base as dev
 
 RUN go install github.com/cosmtrek/air@latest
 
-WORKDIR /app
+WORKDIR /app/
 CMD ["air"]
