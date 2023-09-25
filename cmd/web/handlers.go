@@ -71,6 +71,8 @@ func (app *application) snippetView(w http.ResponseWriter, r *http.Request) {
 		"./ui/html/pages/view.html",
 	}
 
+	data := &templateData{ Snippet: snippet, }
+	
 	templateSet, err := template.ParseFiles(files...)
 	if err != nil {
 		app.serverError(w, err)
@@ -78,7 +80,7 @@ func (app *application) snippetView(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Notice how we are passing in the snippet // data (a models.Snippet struct) as the final parameter?
-	err = templateSet.ExecuteTemplate(w, "base", snippet)
+	err = templateSet.ExecuteTemplate(w, "base", data)
 	if err != nil {
 		app.serverError(w, err)
 	}
