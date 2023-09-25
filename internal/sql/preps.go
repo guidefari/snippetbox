@@ -28,7 +28,7 @@ func NewExampleModel(db *sql.DB) (*exampleModelWithStmt, error) {
 
 // Any methods implemented against the ExampleModel object will have access to
 // the prepared statement.
-func (m *exampleModelWithStmt) Insert(args ...) error {
+func (m *exampleModelWithStmt) Insert(args ...interface{}) error {
 	// Notice how we call Exec directly against the prepared statement, rather
 	// than against the connection pool? Prepared statements also support the Query
 	// and QueryRow methods.
@@ -44,7 +44,7 @@ func (m *exampleModelWithStmt) Insert(args ...) error {
 // ExampleModel struct using the constructor function.
 
 func examplMain() {
-	db, err := sql.Open(...)
+	db, err := sql.Open("mysql", "root:password@tcp(mysql)/item")
 	if err != nil {
 		log.Fatal(err)
 	}
